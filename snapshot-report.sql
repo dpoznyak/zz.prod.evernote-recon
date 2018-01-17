@@ -12,15 +12,15 @@ select '------notebooks with no tags-----------';
 SELECT notebook, COUNT(*)
 FROM note_attr
 where 
-	not (tags COLLATE NOCASE is not null) and
-	notebook COLLATE NOCASE like "*****%" and 
-	notebook COLLATE NOCASE not in (
+	not (tags COLLATE BINARY is not null) and
+	notebook COLLATE BINARY like "*****%" and 
+	notebook COLLATE BINARY not in (
 		"***** [IN]", 
 		"***** IN:later")
-GROUP BY notebook COLLATE NOCASE;
+GROUP BY notebook COLLATE BINARY;
 
 
 select '------NOTEBOOKS/TAGS-----------';
 SELECT notebook, tags, COUNT(*)
 FROM note_attr
-GROUP BY notebook COLLATE NOCASE, tags COLLATE NOCASE;
+GROUP BY notebook COLLATE BINARY, tags COLLATE BINARY;
