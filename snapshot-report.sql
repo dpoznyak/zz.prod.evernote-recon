@@ -1,5 +1,5 @@
 select '------tags-----------';
-select count(*) from tag_attr;
+select * from tag_attr order by name COLLATE BINARY;
 select '------notebooks-----------';
 select count(*) from notebook_attr;
 --select * from note_attr ;
