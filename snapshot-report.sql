@@ -1,5 +1,9 @@
 select '------tags-----------';
-select * from tag_attr order by name COLLATE BINARY;
+select t.name, parent.name, t.subtag_count, t.note_count 
+	from tag_attr t
+		left join tag_attr parent
+			on t.parent_uid = parent.uid
+ 	order by t.name COLLATE BINARY;
 select '------notebooks-----------';
 select count(*) from notebook_attr;
 --select * from note_attr ;
