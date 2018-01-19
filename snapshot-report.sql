@@ -7,7 +7,8 @@ select t.name, parent.name, t.subtag_count, t.note_count
 			on t.parent_uid = parent.uid
  	order by t.name COLLATE BINARY;
 select '------notebooks-----------';
-select name, note_count from notebook_attr;
+select name, note_count from notebook_attr 
+order by name COLLATE BINARY;
 --select * from note_attr ;
 
 select 'count from notebook_attr', sum(note_count) from notebook_attr;
