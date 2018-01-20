@@ -19,6 +19,7 @@ select '------notebooks with no tags-----------';
 SELECT notebook, COUNT(*)
 FROM note_attr
 where 
+	is_deleted is null and
 	not (tags COLLATE BINARY is not null) and
 	notebook COLLATE BINARY like "*****%" and 
 	notebook COLLATE BINARY not in (
