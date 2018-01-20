@@ -30,4 +30,5 @@ GROUP BY notebook COLLATE BINARY;
 select '------NOTEBOOKS/TAGS-----------';
 SELECT notebook, tags, COUNT(*)
 FROM note_attr
+where is_deleted is null
 GROUP BY notebook COLLATE BINARY, tags COLLATE BINARY;
